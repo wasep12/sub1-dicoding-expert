@@ -4,16 +4,16 @@
   padding: 1rem;
   margin: 0 auto;
   justify-content: space-between;
+  border-bottom: 2px solid #fb6218; /* Border hanya di bagian bawah */
   background-color: #082721;
-  position: fixed; /* Menjadikan navigasi selalu menempel di atas */
-  top: 0; /* Menempatkan di bagian atas halaman */
-  left: 0; /* Menjaga navigasi dari tepi kiri */
-  right: 0; /* Menjaga navigasi dari tepi kanan */
-  z-index: 1000; /* Agar selalu berada di atas elemen lainnya */
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan di bawah nav */
   &-hamburger__button {
     text-decoration: none; // Menghilangkan garis bawah
-    font-size: 2rem; // Ukuran font untuk tombol hamburger
+    font-size: 2.5rem; // Ukuran font untuk tombol hamburger
     color: #fb6218; // Warna teks
+    min-width: 44px;
+    min-height: 44px;
   }
   &__list {
     display: none; // Sembunyikan daftar secara default
@@ -25,8 +25,11 @@
     top: 100px; // Jarak dari atas
     text-align: center; // Teks di tengah
     width: 90%; // Lebar daftar
+    min-width: 44px;
+    min-height: 44px;
     left: 50%; // Memusatkan daftar secara horizontal
     border-radius: 0.5rem; // Mengatur radius sudut
+    border: 1px solid #fb6218;
     transform: translateX(-50%); // Memindahkan daftar ke kiri untuk pusat
     background: #082721; // Warna latar belakang
 
