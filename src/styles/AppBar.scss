@@ -1,0 +1,78 @@
+.nav {
+  display: flex;
+  max-width: 1280px;
+  padding: 1rem;
+  margin: 0 auto;
+  justify-content: space-between;
+  background-color: #082721;
+  position: fixed; /* Menjadikan navigasi selalu menempel di atas */
+  top: 0; /* Menempatkan di bagian atas halaman */
+  left: 0; /* Menjaga navigasi dari tepi kiri */
+  right: 0; /* Menjaga navigasi dari tepi kanan */
+  z-index: 1000; /* Agar selalu berada di atas elemen lainnya */
+  &-hamburger__button {
+    text-decoration: none; // Menghilangkan garis bawah
+    font-size: 2rem; // Ukuran font untuk tombol hamburger
+    color: #fb6218; // Warna teks
+  }
+  &__list {
+    display: none; // Sembunyikan daftar secara default
+    flex-direction: column; // Mengatur daftar menjadi kolom
+    gap: 2rem; // Jarak antar item
+    position: absolute; // Mengatur posisi absolut
+    list-style-type: none; // Menghilangkan bullet
+    padding: 2rem; // Padding dalam daftar
+    top: 100px; // Jarak dari atas
+    text-align: center; // Teks di tengah
+    width: 90%; // Lebar daftar
+    left: 50%; // Memusatkan daftar secara horizontal
+    border-radius: 0.5rem; // Mengatur radius sudut
+    transform: translateX(-50%); // Memindahkan daftar ke kiri untuk pusat
+    background: #082721; // Warna latar belakang
+
+    &.active {
+      display: block; // Tampilkan daftar ketika aktif
+    }
+  }
+
+  &__link {
+    text-decoration: none; // Menghilangkan garis bawah
+    color: white; // Warna teks
+    font-size: 16px; // Ukuran font untuk link
+    display: block; // Membuat link sebagai blok
+    padding: 20px 0; // Jarak vertikal untuk link
+
+    &:hover {
+      color: #fb6218;
+      transform: scale(1.05);
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+  }
+  .nav__logo {
+    display: flex;
+  }
+  @media screen and (min-width: 768px) {
+    &-hamburger__button {
+      display: none; // Sembunyikan tombol hamburger pada tampilan desktop
+    }
+
+    &__list {
+      display: flex; // Tampilkan daftar sebagai flex pada desktop
+      flex-direction: row; // Mengatur daftar menjadi baris
+      position: static; // Mengatur posisi statis
+      padding: 0 20px 0 0; // Padding untuk daftar
+      top: unset; // Hapus jarak atas
+      text-align: unset; // Hapus penyelarasan teks
+      width: auto; // Lebar otomatis
+      left: unset; // Hapus jarak kiri
+      border-radius: unset; // Hapus radius sudut
+      transform: unset; // Hapus transformasi
+      background: unset; // Hapus latar belakang
+      border: unset; // Hapus batas
+    }
+
+    &__list.active {
+      display: flex; // Tampilkan daftar sebagai flex ketika aktif
+    }
+  }
+}
