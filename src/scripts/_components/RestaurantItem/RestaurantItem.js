@@ -23,6 +23,14 @@ class RestaurantItem extends HTMLElement {
       description.length > 150
         ? `${description.substring(0, 150)}...`
         : description;
+    // Mengubah meta description di head
+    const metaDescription = document.querySelector('meta[name="description"]');
+    metaDescription.setAttribute(
+      "content",
+      `Restaurant: ${escapeHTML(name)} - ${escapeHTML(city)}. ${escapeHTML(
+        truncatedDescription
+      )}`
+    );
 
     this.innerHTML = `
         <article class="restaurant-item">
